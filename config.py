@@ -1,3 +1,8 @@
+# Pausas visuales para observar las pruebas
+MODO_VISUAL = True
+TIEMPO_PAUSA_CAMPOS = 2
+TIEMPO_PAUSA_FINAL = 5
+
 # Tiempo máximo de espera explícita (segundos)
 TIEMPO_ESPERA = 10
 
