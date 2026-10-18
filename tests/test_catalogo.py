@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from conftest import driver
 from utils.pausas import pausar
 from utils.navegacion import esperar_inventario
 from utils.autenticacion import iniciar_sesion
@@ -15,7 +14,7 @@ from config import (
 )
 
 def test_verificar_catalogo(driver):
-        # Iniciar sesión con credenciales válidas
+    # Iniciar sesión con credenciales válidas
     iniciar_sesion(driver, USUARIO_VALIDO, CONTRASENA_VALIDA)
 
     # Configurar el tiempo máximo de espera explícita

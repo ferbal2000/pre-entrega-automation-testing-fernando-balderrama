@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from conftest import driver
 from utils.pausas import pausar
 from utils.autenticacion import iniciar_sesion
 from utils.navegacion import esperar_inventario
