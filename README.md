@@ -37,7 +37,7 @@ pre-entrega-qa/
 - `tests/`: contiene los casos de prueba automatizados.
 - `utils/`: contiene funciones auxiliares reutilizables.
 - `reports/`: almacena los resultados de las ejecuciones en formato HTML.
-- `config.py`: centraliza las credenciales de prueba, URL, tiempos de espera y pausas visuales.
+- `config.py`: contiene las credenciales de prueba, URL, tiempos de espera y pausas visuales.
 - `conftest.py`: configura el navegador mediante una fixture de pytest.
 - `pytest.ini`: define las opciones predeterminadas de ejecución.
 - `requirements.txt`: registra las dependencias del proyecto.
@@ -134,11 +134,11 @@ Para generarlo manualmente:
 pytest tests/ -v --html=reports/reporte.html --self-contained-html
 ```
 
-Cada nueva ejecución sobrescribe el reporte anterior.
+Cada ejecución sobrescribe el reporte anterior.
 
 ## Configuración
 
-En `config.py` se encuentran las principales opciones del proyecto.
+En `config.py` se encuentran las opciones del proyecto.
 
 - `TIEMPO_ESPERA`: tiempo máximo de las esperas explícitas.
 - `MODO_VISUAL`: activa o desactiva las pausas para observar las interacciones.
@@ -146,7 +146,7 @@ En `config.py` se encuentran las principales opciones del proyecto.
 - `TIEMPO_PAUSA_FINAL`: pausa al finalizar los tests.
 - `URL_BASE`: dirección de SauceDemo.
 
-Para ejecutar sin pausas artificiales:
+Para ejecutar sin pausas visuales:
 
 ```python
 MODO_VISUAL = False
