@@ -1,5 +1,5 @@
 # Pausas visuales para observar las pruebas
-MODO_VISUAL = True
+MODO_VISUAL = False
 TIEMPO_PAUSA_CAMPOS = 2
 TIEMPO_PAUSA_FINAL = 5
 

@@ -3,9 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-@pytest.fixture
-
 # Configuración del driver (Chrome)
+@pytest.fixture
 def driver():
     # Servicio de Chrome
     service = Service(ChromeDriverManager().install())
@@ -19,4 +18,5 @@ def driver():
 
     yield driver
 
+    # Cierra el navegador al finalizar cada test
     driver.quit()

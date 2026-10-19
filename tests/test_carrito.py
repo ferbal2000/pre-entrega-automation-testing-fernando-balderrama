@@ -23,6 +23,15 @@ def test_agregar_producto_al_carrito(driver):
     # Configurar el tiempo máximo de espera explícita
     espera = WebDriverWait(driver, TIEMPO_ESPERA)
 
+    # Verificar que el carrito esté vacío inicialmente
+    contador_inicial = driver.find_elements(
+        By.CLASS_NAME, "shopping_cart_badge"
+    )
+
+    assert len(contador_inicial) == 0, (
+        "El carrito debería estar vacío antes de agregar productos"
+    )
+
     # Esperar a que aparezca el primer producto
     primer_producto = espera.until(
         EC.visibility_of_element_located(
@@ -50,11 +59,11 @@ def test_agregar_producto_al_carrito(driver):
         )
     )
 
-    # Guardar la cantidad
-    cantidad_carrito = contador.text
+    # Guardar y validar la cantidad de productos
+    cantidad_carrito = int(contador.text)
 
-    assert cantidad_carrito == "1", (
-        f"Se esperaba 1 producto en el carrito, pero aparece {cantidad_carrito}"
+    assert cantidad_carrito == len(contador_inicial) + 1, (
+        f"Se esperaba 1 producto en el carrito, pero aparecen {cantidad_carrito}"
     )
 
     # Abrir el carrito de compras
@@ -87,6 +96,7 @@ def test_agregar_producto_al_carrito(driver):
         f"Se esperaba '{nombre_producto}', pero aparece '{nombre_carrito}'"
     )
 
+    print(f"Cantidad inicial de productos en el carrito: {len(contador_inicial)}")
     print(f"Producto agregado correctamente: {nombre_carrito}")
     print(f"Cantidad de productos en el carrito: {cantidad_carrito}")
 
