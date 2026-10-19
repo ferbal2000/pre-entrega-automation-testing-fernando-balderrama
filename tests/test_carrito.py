@@ -39,7 +39,7 @@ def test_agregar_producto_al_carrito(driver):
 
     # Agregar el primer producto al carrito
     boton_agregar = primer_producto.find_element(
-        By.CSS_SELECTOR, "button"
+        By.CSS_SELECTOR, "button.btn_inventory"
     )
     boton_agregar.click()
 
@@ -77,6 +77,7 @@ def test_agregar_producto_al_carrito(driver):
         )
     )
 
+    #Nombre del producto en el carrito
     nombre_carrito = producto_carrito.find_element(
         By.CLASS_NAME, "inventory_item_name"
     ).text
